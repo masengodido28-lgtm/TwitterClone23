@@ -1,4 +1,4 @@
-# 🐦 Twitter (X) Clone
+#  Twitter (X) Clone
 
 A simple front-end clone of the X (formerly Twitter) homepage built using HTML and CSS. This project recreates the basic layout of the desktop interface, including the sidebar, tweet feed, and right-hand trending section.
 

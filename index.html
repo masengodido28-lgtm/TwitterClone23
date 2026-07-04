@@ -7,6 +7,10 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#1D9BF0">
+
     <!-- Font Awesome -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -43,6 +47,7 @@
 
         <div class="feed-header">
             <h2>Home</h2>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
         </div>
 
         <div class="tweet-box">
@@ -57,7 +62,7 @@
 
         <div class="post">
 
-            <img src="https://i.pravatar.cc/45?img=5">
+            <img src="https://pbs.twimg.com/profile_images/1967919543856013312/VsbJ5hZM_400x400.jpg">
 
             <div class="post-content">
 
@@ -70,7 +75,28 @@
                 </p>
 
                 <img
-                src="https://picsum.photos/600/320">
+                src="https://pbs.twimg.com/media/HMaJgw2XcAA7pEr?format=jpg&name=small">
+
+            </div>
+
+        </div>
+
+        <div class="post">
+
+            <img src="https://pbs.twimg.com/profile_images/2061662429310754816/42lLwttl_400x400.jpg">
+
+            <div class="post-content">
+
+                <h3>KFC South Africa
+                    <span>@KFCSA · 9h</span>
+                </h3>
+
+                <p>
+                   My Prego isn’t the only Portuguese legend that’s showing the competition flames. 🔥
+                </p>
+
+                <img
+                src="https://pbs.twimg.com/media/HMSmDkJW8AAReWo?format=jpg&name=large">
 
             </div>
 
@@ -111,9 +137,44 @@
 
         </div>
 
+    <footer class="site-footer">
+        <p>Terms
+ ·
+Privacy
+ ·
+Cookies
+ ·
+Accessibility
+ ·
+Ads Info
+ ·
+
+More
+© 2026 X Corp.</p>
+    </footer>
+
     </aside>
 
 </div>
+
+    <script>
+    (function(){
+        const toggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        const stored = localStorage.getItem('theme') || 'light';
+        root.setAttribute('data-theme', stored);
+        function updateIcon(){
+            toggle.textContent = root.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+        }
+        updateIcon();
+        toggle.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateIcon();
+        });
+    })();
+    </script>
 
 </body>
 </html>
